@@ -1,3 +1,3 @@
-gmodule example.com/investment-calculator
+module example.com/investment-calculator
 
 go 1.22.1
