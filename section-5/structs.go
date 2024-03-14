@@ -9,7 +9,7 @@ type user struct {
 	firstName string
 	lastName string
 	birthdate string
-	createdAt time.Ticker
+	createdAt time.Time
 }
 
 func main() {
@@ -28,13 +28,13 @@ func main() {
 
 	// ... do something awesome with that gathered data!
 
-	fmt.Println(firstName, lastName, birthdate)
 
-	outputUserDetails(firstName, lastName, birthdate)
+
+	outputUserDetails(appUser)
 }
 
-func outputUserDetails(firstName, lastName, birthdate string) {
-	fmt.Println(firstName, lastName, birthdate)
+func outputUserDetails(u user) {
+	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
 func getUserData(promptText string) string {
