@@ -7,30 +7,30 @@ import (
 )
 
 type User struct {
-	FirstName string
+	firstName string
 	lastName string
 	birthdate string
 	createdAt time.Time
 }
 
 
-func (u user) outputUserDetails() {
+func (u User) OutputUserDetails() {
 	
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
-func (u *user) clearUserName() {
+func (u *User) ClearUserName() {
 	u.firstName = ""
 	u.lastName = ""
 
 }
 
-func newUser(firstName, lastName, birthdate string) (*user, error) {
+func New(firstName, lastName, birthdate string) (*User, error) {
 	if firstName == "" || lastName == "" || birthdate == "" {
 		return nil, errors.New("First name, last name and birthdate are required.")
 	}
 
-	return &user{
+	return &User{
 		firstName: firstName,
 		lastName: lastName,
 		birthdate: birthdate,
